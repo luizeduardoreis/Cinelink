@@ -26,47 +26,47 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        lblCartazFilme = new javax.swing.JLabel();
+        lblTituloDoFilme = new javax.swing.JLabel();
+        btnQuatorzeHorasLegendado = new javax.swing.JButton();
+        btnDezesseisHorasDublado = new javax.swing.JButton();
+        scrSinopse = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        lblClassificacaoIndicativa = new javax.swing.JLabel();
+        lblDublado = new javax.swing.JLabel();
+        lblSalaUm = new javax.swing.JLabel();
+        btnVinteHorasDublado = new javax.swing.JButton();
+        btnDezoitoHorasDublado = new javax.swing.JButton();
+        btnZeroHorasDublado = new javax.swing.JButton();
+        btnVinteEDuasHorasDublado = new javax.swing.JButton();
+        lblLegendado = new javax.swing.JLabel();
+        lblSala2 = new javax.swing.JLabel();
+        btnQuatorzeHorasDublado = new javax.swing.JButton();
+        btnDezesseisHorasLegendado = new javax.swing.JButton();
+        btnDezoitoHorasLegendado = new javax.swing.JButton();
+        btnVinteHorasLegendado = new javax.swing.JButton();
+        btnVinteEDuasHorasLegendado = new javax.swing.JButton();
+        btnZeroHorasLegendado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filme1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        lblCartazFilme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filme1.png"))); // NOI18N
+        lblCartazFilme.setText("jLabel1");
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel5.setText("A expedição estrelada");
+        lblTituloDoFilme.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        lblTituloDoFilme.setText("A expedição estrelada");
 
-        jButton1.setText("14:00");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnQuatorzeHorasLegendado.setText("14:00");
+        btnQuatorzeHorasLegendado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnQuatorzeHorasLegendadoActionPerformed(evt);
             }
         });
 
-        jButton2.setText("16:00");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDezesseisHorasDublado.setText("16:00");
+        btnDezesseisHorasDublado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDezesseisHorasDubladoActionPerformed(evt);
             }
         });
 
@@ -75,47 +75,47 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
         jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
         jTextArea2.setText("Sinopse: Em um futuro não muito distante, uma equipe de cientistas brilhantes e astronautas aventureiros embarca em uma missão espacial inovadora. O objetivo deles é alcançar uma galáxia distante e explorar um planeta que dizem conter a chave para a vida eterna. No entanto, enquanto atravessam as regiões desconhecidas do universo, eles encontram anomalias cósmicas e enfrentam desafios perigosos que testam seus limites físicos e mentais. Em meio à vasta extensão do espaço, eles devem contar com sua desenvoltura e trabalho em equipe para sobreviver e descobrir os segredos extraordinários que os aguardam.");
-        jScrollPane3.setViewportView(jTextArea2);
+        scrSinopse.setViewportView(jTextArea2);
 
-        jLabel2.setText("Classificação indicativa: 14 anos");
+        lblClassificacaoIndicativa.setText("Classificação indicativa: 14 anos");
 
-        jLabel3.setText("Dublado:");
+        lblDublado.setText("Dublado:");
 
-        jLabel4.setText("Sala 1:");
+        lblSalaUm.setText("Sala 1:");
 
-        jButton3.setText("20:00");
+        btnVinteHorasDublado.setText("20:00");
 
-        jButton4.setText("18:00");
+        btnDezoitoHorasDublado.setText("18:00");
 
-        jButton5.setText("00:00");
+        btnZeroHorasDublado.setText("00:00");
 
-        jButton6.setText("22:00");
+        btnVinteEDuasHorasDublado.setText("22:00");
 
-        jLabel6.setText("Legendado:");
+        lblLegendado.setText("Legendado:");
 
-        jLabel7.setText("Sala 2:");
+        lblSala2.setText("Sala 2:");
 
-        jButton7.setText("14:00");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnQuatorzeHorasDublado.setText("14:00");
+        btnQuatorzeHorasDublado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnQuatorzeHorasDubladoActionPerformed(evt);
             }
         });
 
-        jButton8.setText("16:00");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnDezesseisHorasLegendado.setText("16:00");
+        btnDezesseisHorasLegendado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnDezesseisHorasLegendadoActionPerformed(evt);
             }
         });
 
-        jButton9.setText("18:00");
+        btnDezoitoHorasLegendado.setText("18:00");
 
-        jButton10.setText("20:00");
+        btnVinteHorasLegendado.setText("20:00");
 
-        jButton11.setText("22:00");
+        btnVinteEDuasHorasLegendado.setText("22:00");
 
-        jButton12.setText("00:00");
+        btnZeroHorasLegendado.setText("00:00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,48 +125,48 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCartazFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(scrSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel5))
+                                    .addComponent(lblClassificacaoIndicativa)
+                                    .addComponent(lblTituloDoFilme))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addComponent(lblDublado)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton7)
+                                .addComponent(btnQuatorzeHorasDublado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
+                                .addComponent(btnDezesseisHorasDublado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
+                                .addComponent(btnDezoitoHorasDublado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
+                                .addComponent(btnVinteHorasDublado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6)
+                                .addComponent(btnVinteEDuasHorasDublado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
+                                .addComponent(btnZeroHorasDublado))
+                            .addComponent(lblSalaUm)
+                            .addComponent(lblLegendado)
+                            .addComponent(lblSala2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnQuatorzeHorasLegendado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton8)
+                                .addComponent(btnDezesseisHorasLegendado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton9)
+                                .addComponent(btnDezoitoHorasLegendado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10)
+                                .addComponent(btnVinteHorasLegendado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11)
+                                .addComponent(btnVinteEDuasHorasLegendado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton12)))
+                                .addComponent(btnZeroHorasLegendado)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -175,57 +175,57 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(lblTituloDoFilme)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
+                        .addComponent(lblClassificacaoIndicativa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
+                        .addComponent(scrSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCartazFilme))
                 .addGap(17, 17, 17)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDublado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(lblSalaUm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5)
-                    .addComponent(jButton7))
+                    .addComponent(btnDezesseisHorasDublado)
+                    .addComponent(btnDezoitoHorasDublado)
+                    .addComponent(btnVinteHorasDublado)
+                    .addComponent(btnVinteEDuasHorasDublado)
+                    .addComponent(btnZeroHorasDublado)
+                    .addComponent(btnQuatorzeHorasDublado))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addComponent(lblLegendado)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(lblSala2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(btnQuatorzeHorasLegendado)
+                    .addComponent(btnDezesseisHorasLegendado)
+                    .addComponent(btnDezoitoHorasLegendado)
+                    .addComponent(btnVinteHorasLegendado)
+                    .addComponent(btnVinteEDuasHorasLegendado)
+                    .addComponent(btnZeroHorasLegendado))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnQuatorzeHorasLegendadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuatorzeHorasLegendadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnQuatorzeHorasLegendadoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDezesseisHorasDubladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDezesseisHorasDubladoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDezesseisHorasDubladoActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnQuatorzeHorasDubladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuatorzeHorasDubladoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnQuatorzeHorasDubladoActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnDezesseisHorasLegendadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDezesseisHorasLegendadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnDezesseisHorasLegendadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,26 +264,26 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton btnDezesseisHorasDublado;
+    private javax.swing.JButton btnDezesseisHorasLegendado;
+    private javax.swing.JButton btnDezoitoHorasDublado;
+    private javax.swing.JButton btnDezoitoHorasLegendado;
+    private javax.swing.JButton btnQuatorzeHorasDublado;
+    private javax.swing.JButton btnQuatorzeHorasLegendado;
+    private javax.swing.JButton btnVinteEDuasHorasDublado;
+    private javax.swing.JButton btnVinteEDuasHorasLegendado;
+    private javax.swing.JButton btnVinteHorasDublado;
+    private javax.swing.JButton btnVinteHorasLegendado;
+    private javax.swing.JButton btnZeroHorasDublado;
+    private javax.swing.JButton btnZeroHorasLegendado;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel lblCartazFilme;
+    private javax.swing.JLabel lblClassificacaoIndicativa;
+    private javax.swing.JLabel lblDublado;
+    private javax.swing.JLabel lblLegendado;
+    private javax.swing.JLabel lblSala2;
+    private javax.swing.JLabel lblSalaUm;
+    private javax.swing.JLabel lblTituloDoFilme;
+    private javax.swing.JScrollPane scrSinopse;
     // End of variables declaration//GEN-END:variables
 }
