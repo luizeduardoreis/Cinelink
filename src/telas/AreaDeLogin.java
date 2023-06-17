@@ -4,6 +4,9 @@
  */
 package telas;
 
+import classes.ManageData;
+import javax.swing.*;
+
 /**
  *
  * @author maxwell
@@ -73,6 +76,11 @@ public class AreaDeLogin extends javax.swing.JFrame {
         );
 
         buttonEntrar.setText("Entrar");
+        buttonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEntrarActionPerformed(evt);
+            }
+        });
 
         buttonSair.setText("Sair");
         buttonSair.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +124,25 @@ public class AreaDeLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_buttonSairActionPerformed
+
+    private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
+        // TODO add your handling code here:
+        
+        String password = this.passwordFieldSenha.getText(); 
+        String cpf = this.textFieldCpf.getText();
+        
+        String findClienteAsString = ManageData.FindCliente(cpf, password);
+        
+        if(findClienteAsString != null) {
+            ManageData.SetCurrentUser(findClienteAsString);
+            JOptionPane.showMessageDialog(null, "Logado com sucesso");
+            this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválido.");
+        }
+        
+        
+    }//GEN-LAST:event_buttonEntrarActionPerformed
 
     /**
      * @param args the command line arguments

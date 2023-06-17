@@ -20,8 +20,8 @@ public class Principal extends javax.swing.JFrame {
         buttonCartaz.setEnabled(false);
     }
     
-    public static Cinema cinema = new Cinema();
-    
+    public static ManageData manageData = new ManageData();
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

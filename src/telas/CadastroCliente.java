@@ -5,6 +5,7 @@
 package telas;
 
 import classes.*;
+import classes.Constants;
 
 /**
  *
@@ -208,6 +209,31 @@ public class CadastroCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    private void enableSaveButton() {
+        // Libera Salvar
+        if(textFieldNome.getText().equals("")){
+            buttonSalvar.setEnabled(false);
+            return;
+        }
+        if(textFieldCpf.getText().equals("")){
+            buttonSalvar.setEnabled(false);
+            return;
+        }
+        if(textFieldEmail.getText().equals("")){
+            buttonSalvar.setEnabled(false);
+            return;
+        }
+        if(textFieldData.getText().equals("")){
+            buttonSalvar.setEnabled(false);
+            return;
+        }
+        if(passwordFieldSenha.getText().equals("")){
+            buttonSalvar.setEnabled(false);
+            return;
+        }
+        buttonSalvar.setEnabled(true);
+    }
+
     private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -217,15 +243,18 @@ public class CadastroCliente extends javax.swing.JFrame {
         // Cadastra um cliente
         
         Cliente cliente = new Cliente(
-                toggleButtonEstudante.isSelected(),
-                toggleButtonPreferencial.isSelected(),
+                0,
                 textFieldEmail.getText(),
                 textFieldCpf.getText(),
-                passwordFieldSenha.getText(),
-                0,
                 textFieldNome.getText(),
-                textFieldData.getText());
-        Principal.cinema.addCliente(cliente);
+                passwordFieldSenha.getText(),
+                textFieldData.getText(),
+                toggleButtonEstudante.isSelected(),
+                toggleButtonPreferencial.isSelected()
+            );
+        
+        Principal.manageData.WriteData(Constants.CLIENTE_LIST_FILE_PATH,
+                cliente.toString(), true);
         
         textFieldNome.setText("");
         textFieldEmail.setText("");
@@ -239,128 +268,23 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
     private void textFieldNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldNomeKeyReleased
-        // Libera Salvar
-        if(textFieldNome.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldCpf.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldEmail.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldData.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(passwordFieldSenha.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        buttonSalvar.setEnabled(true);
+        this.enableSaveButton();
     }//GEN-LAST:event_textFieldNomeKeyReleased
 
     private void textFieldDataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldDataKeyReleased
-        // Libera Salvar
-        if(textFieldNome.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldCpf.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldEmail.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldData.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(passwordFieldSenha.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        buttonSalvar.setEnabled(true);
+        this.enableSaveButton();
     }//GEN-LAST:event_textFieldDataKeyReleased
 
     private void textFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldEmailKeyReleased
-        // Libera Salvar
-        if(textFieldNome.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldCpf.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldEmail.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldData.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(passwordFieldSenha.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        buttonSalvar.setEnabled(true);
+        this.enableSaveButton();
     }//GEN-LAST:event_textFieldEmailKeyReleased
 
     private void textFieldCpfKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldCpfKeyReleased
-        // Libera Salvar
-        if(textFieldNome.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldCpf.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldEmail.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldData.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(passwordFieldSenha.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        buttonSalvar.setEnabled(true);
+        this.enableSaveButton();
     }//GEN-LAST:event_textFieldCpfKeyReleased
-
+   
     private void passwordFieldSenhaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldSenhaKeyReleased
-        // Libera Salvar
-        if(textFieldNome.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldCpf.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldEmail.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(textFieldData.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        if(passwordFieldSenha.getText().equals("")){
-            buttonSalvar.setEnabled(false);
-            return;
-        }
-        buttonSalvar.setEnabled(true);
+        this.enableSaveButton();
     }//GEN-LAST:event_passwordFieldSenhaKeyReleased
 
     /**

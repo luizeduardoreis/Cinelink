@@ -5,7 +5,6 @@
 package classes;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -13,13 +12,13 @@ import java.util.Date;
  */
 public class Cliente extends Pessoa {
     
-    private boolean estudante;
-    private boolean preferencial;
-    
     private String email;
     private String cpf;
     private String senha;
 
+    private boolean estudante;
+    private boolean preferencial;
+    
     private ArrayList<Cinema> cinemas;
     private ArrayList<Ingresso> ingressos;
     
@@ -28,7 +27,8 @@ public class Cliente extends Pessoa {
         ingressos = new ArrayList();
     };
     
-    public Cliente(boolean estudante, boolean preferencial, String email, String cpf, String senha, int id, String nome, String dataNasc) {
+    public Cliente(int id, String email, String cpf, String nome,
+            String senha, String dataNasc, boolean estudante, boolean preferencial) {
         super(id, nome, dataNasc);
         this.estudante = estudante;
         this.preferencial = preferencial;
@@ -88,4 +88,9 @@ public class Cliente extends Pessoa {
         this.cinemas.add(cinema);
     }
     
+    @Override
+    public String toString() {
+        return this.id + " " + this.email + " " + this.cpf + " " + this.nome + " " + this.senha + " " + 
+                this.dataNasc + " " + this.estudante + " " + this.preferencial;
+    }
 }
