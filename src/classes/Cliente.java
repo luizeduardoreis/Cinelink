@@ -10,8 +10,12 @@ import java.util.ArrayList;
  *
  * @author maxwell
  */
-public class Cliente extends Pessoa {
+public class Cliente {
     
+    private int id;
+    private String nome;
+    private String dataNasc;
+
     private String email;
     private String cpf;
     private String senha;
@@ -29,7 +33,9 @@ public class Cliente extends Pessoa {
     
     public Cliente(int id, String email, String cpf, String nome,
             String senha, String dataNasc, boolean estudante, boolean preferencial) {
-        super(id, nome, dataNasc);
+        this.id = id;
+        this.nome = nome;
+        this.dataNasc = dataNasc;
         this.estudante = estudante;
         this.preferencial = preferencial;
         this.email = email;

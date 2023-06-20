@@ -5,6 +5,9 @@
 package telas;
 
 import classes.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +20,6 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        buttonCartaz.setEnabled(false);
     }
     
     public static ManageData manageData = new ManageData();

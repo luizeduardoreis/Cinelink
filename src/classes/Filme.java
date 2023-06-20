@@ -19,16 +19,14 @@ public class Filme {
     private int classificacaoINdicativa;
     private long bilheteria;
     private float avaliacaoDoPublico;
-    private Diretor diretor;
-    private ArrayList<Personagem> personagens;
+    private String diretor;
     private ArrayList<Sessao> sessoes;
 
     public Filme(){
-        personagens = new ArrayList();
         sessoes = new ArrayList();
     };
  
-    public Filme(int id, String titulo, Date dataEstreia, int classificacaoINdicativa, long bilheteria, float avaliacaoDoPublico, Diretor diretor) {
+    public Filme(int id, String titulo, String diretor, Date dataEstreia, int classificacaoINdicativa, long bilheteria, float avaliacaoDoPublico) {
         this.id = id;
         this.titulo = titulo;
         this.dataEstreia = dataEstreia;
@@ -37,7 +35,6 @@ public class Filme {
         this.avaliacaoDoPublico = avaliacaoDoPublico;
         this.diretor = diretor;
         
-        personagens = new ArrayList();
         sessoes = new ArrayList();
     }
     
@@ -89,20 +86,8 @@ public class Filme {
         this.avaliacaoDoPublico = avaliacaoDoPublico;
     }
     
-    public void addPersonagem(Personagem personagem) {
-        this.personagens.add(personagem);
-    }
-    
     public void addSessao(Sessao sessao) {
         this.sessoes.add(sessao);
-    }
-
-    public Diretor getDiretor() {
-        return diretor;
-    }
-
-    public void setDiretor(Diretor diretor) {
-        this.diretor = diretor;
     }
     
 }

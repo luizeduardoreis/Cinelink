@@ -4,6 +4,10 @@
  */
 package telas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author maxwell
@@ -213,7 +217,14 @@ public class ListagemFilmes extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSessoesBActionPerformed
 
     private void buttonSessoesAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSessoesAActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+
+            new SelecaoDeSessao("Nome teste").setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(ListagemFilmes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_buttonSessoesAActionPerformed
 
     /**

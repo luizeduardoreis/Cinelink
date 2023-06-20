@@ -106,11 +106,6 @@ public class Cinema {
         return sessoes;
     }
     
-    public void addCliente(Cliente cliente) {
-        cliente.setId(this.clientes.size());
-        this.clientes.add(cliente);
-    }
-    
     public void registrarSessao(Sessao sessao) {
         this.sessoes.add(sessao);
     }

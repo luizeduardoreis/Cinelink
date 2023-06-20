@@ -4,6 +4,15 @@
  */
 package telas;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Luiz Eduardo
@@ -12,9 +21,17 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
 
     /**
      * Creates new form SelecaoDeSessao
+     * @param title
+     * @throws java.net.MalformedURLException
      */
-    public SelecaoDeSessao() {
+    public SelecaoDeSessao(String title) throws MalformedURLException, IOException {
         initComponents();
+        lblTituloDoFilme.setText(title);
+        
+        URL url = new URL("https://i.pinimg.com/originals/24/8a/45/248a452587f56539da876d6e2bd13007.png");
+        var image = ImageIO.read(url);
+        lblCartazFilme.setIcon(new ImageIcon(image)); // NOI18N
+       
     }
 
     /**
@@ -258,7 +275,11 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SelecaoDeSessao().setVisible(true);
+                try {
+                    new SelecaoDeSessao("asdads").setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(SelecaoDeSessao.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
