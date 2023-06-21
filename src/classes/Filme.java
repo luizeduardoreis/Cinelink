@@ -21,12 +21,13 @@ public class Filme {
     private float avaliacaoDoPublico;
     private String diretor;
     private ArrayList<Sessao> sessoes;
+    private String sinopse;
 
     public Filme(){
         sessoes = new ArrayList();
     };
  
-    public Filme(int id, String titulo, String diretor, Date dataEstreia, int classificacaoIndicativa, long bilheteria, float avaliacaoDoPublico) {
+    public Filme(int id, String titulo, String diretor, Date dataEstreia, int classificacaoIndicativa, long bilheteria, float avaliacaoDoPublico, String sinopse) {
         this.id = id;
         this.titulo = titulo;
         this.dataEstreia = dataEstreia;
@@ -34,6 +35,7 @@ public class Filme {
         this.bilheteria = bilheteria;
         this.avaliacaoDoPublico = avaliacaoDoPublico;
         this.diretor = diretor;
+        this.sinopse = sinopse;
         
         sessoes = new ArrayList();
     }
@@ -62,12 +64,12 @@ public class Filme {
         this.dataEstreia = dataEstreia;
     }
 
-    public int getClassificacaoINdicativa() {
-        return classificacaoINdicativa;
+    public int getClassificacaoIndicativa() {
+        return classificacaoIndicativa;
     }
 
-    public void setClassificacaoINdicativa(int classificacaoINdicativa) {
-        this.classificacaoINdicativa = classificacaoINdicativa;
+    public void setClassificacaoIndicativa(int classificacaoINdicativa) {
+        this.classificacaoIndicativa = classificacaoINdicativa;
     }
 
     public long getBilheteria() {
