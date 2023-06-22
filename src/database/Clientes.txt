@@ -1,2 +1,0 @@
-0 luizedureis1504@gmail.com 02640193180 Luiz Eduardo Reis Senha123 15/04/2004 true false
-0 luiz@gmail.com 12 luiz Senha123 15/04/2004 false false

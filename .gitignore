@@ -6,3 +6,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+src/database/Clientes.txt
+src/database/CurrentUser.txt
+

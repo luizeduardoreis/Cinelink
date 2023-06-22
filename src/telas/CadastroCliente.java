@@ -5,7 +5,9 @@
 package telas;
 
 import classes.*;
+import java.util.regex.*;
 import classes.Constants;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -114,9 +116,9 @@ public class CadastroCliente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCadastroLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(panelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelCpf, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(labelSenha, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelCpf, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(46, 46, 46)
                         .addGroup(panelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +149,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                     .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelCpf))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,6 +244,26 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         // Cadastra um cliente
         
+        if(!Pattern.matches("[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}", textFieldCpf.getText())) {
+            JOptionPane.showMessageDialog(null, "CPF inválido");
+            return;
+        }
+        
+        if(!Pattern.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", textFieldEmail.getText())) {
+            JOptionPane.showMessageDialog(null, "Email inválido");
+            return;
+        }
+        
+        if(!Pattern.matches("^(0[1-9]|[12][0-9]|[3][01])/(0[1-9]|1[012])/\\d{4}$", textFieldData.getText())) {
+            JOptionPane.showMessageDialog(null, "Data de nascimento inválida");
+            return;
+        }
+        
+        if(passwordFieldSenha.getText().length() < 8) {
+            JOptionPane.showMessageDialog(null, "A senha deve conter pelo menos 8 dígitos.");
+            return;
+        }
+        
         Cliente cliente = new Cliente(
                 0,
                 textFieldEmail.getText(),
@@ -256,14 +278,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         Principal.manageData.WriteData(Constants.CLIENTE_LIST_FILE_PATH,
                 cliente.toString(), true);
         
-        textFieldNome.setText("");
-        textFieldEmail.setText("");
-        textFieldData.setText("");
-        textFieldCpf.setText("");
-        passwordFieldSenha.setText("");
-        toggleButtonEstudante.setSelected(false);
-        toggleButtonPreferencial.setSelected(false);
-        buttonSalvar.setEnabled(false);
+        JOptionPane.showMessageDialog(null, "Conta criada com sucesso");
+        
         this.setVisible(false);
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
