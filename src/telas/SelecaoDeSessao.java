@@ -105,6 +105,11 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
         btnDezoitoHorasDublado.setText("18:00");
 
         btnZeroHorasDublado.setText("00:00");
+        btnZeroHorasDublado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZeroHorasDubladoActionPerformed(evt);
+            }
+        });
 
         btnVinteEDuasHorasDublado.setText("22:00");
 
@@ -243,6 +248,11 @@ public class SelecaoDeSessao extends javax.swing.JFrame {
     private void btnDezesseisHorasLegendadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDezesseisHorasLegendadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDezesseisHorasLegendadoActionPerformed
+
+    private void btnZeroHorasDubladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroHorasDubladoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnZeroHorasDubladoActionPerformed
 
     /**
      * @param args the command line arguments
