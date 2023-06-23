@@ -9,34 +9,109 @@ import classes.Cliente;
 import classes.Filme;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Scanner;
+import telas.Principal;
 
 /**
  *
  * @author maxwell
  */
 public class ManageData {
-    
-    public ManageData() {}
-    
+
+    public ManageData() {
+    }
+
     public static void SaveClientes(ArrayList<Cliente> clientes) {
-        for(var c : clientes) {
+        ClearFile(Constants.CLIENTE_LIST_FILE_PATH);
+        for (var c : clientes) {
             WriteData(Constants.CLIENTE_LIST_FILE_PATH,
-                c.toString(), false);
+                    c.toString(), true);
         }
     }
-    
+
     public static void SaveFilmes(ArrayList<Filme> filmes) {
-        for(var f : filmes) {
+        ClearFile(Constants.FILMES_LIST_FILE_PATH);
+        for (var f : filmes) {
             WriteData(Constants.FILMES_LIST_FILE_PATH,
-                f.toString(), false);
+                    f.toString(), true);
         }
     }
+
+    public static ArrayList<Cliente> GetClientes() {
+        var data = new ArrayList<Cliente>();
+        
+        try {
+            File file = new File(Constants.CLIENTE_LIST_FILE_PATH);
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+            while ((line = br.readLine()) != null) {
+
+                var info = line.split("\\s+");
+
+                var cliente = new Cliente(
+                    Integer.parseInt(info[0]),
+                    info[1],
+                    info[2],
+                    info[3],
+                    info[4],
+                    info[5],
+                    Boolean.parseBoolean(info[6]),
+                    Boolean.parseBoolean(info[7])
+                );
+                data.add(cliente);
+
+            }
+            br.close();
+            fr.close();
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+        
+        return data;
+    }
     
-    
+      public static ArrayList<Filme> GetFilmes() {
+        var data = new ArrayList<Filme>();
+
+        try {
+            File file = new File(Constants.FILMES_LIST_FILE_PATH);
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+            while ((line = br.readLine()) != null) {
+
+                var info = line.split("\\s+");
+
+                var filme = new Filme(
+                    Integer.parseInt(info[0]),
+                    info[1],
+                    info[2],
+                    info[3],
+                    Integer.parseInt(info[4]),
+                    Long.parseLong(info[5]),
+                    Float.parseFloat(info[6]),
+                    info[7]
+                );
+
+                data.add(filme);
+            }
+
+            br.close();
+            fr.close();
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+        
+        return data;
+    }
+
     public static void WriteData(String filePath, String data, boolean append) {
         File file = new File(filePath);
         FileWriter fr = null;
@@ -53,37 +128,22 @@ public class ManageData {
             }
         }
     }
-    
-    public static String FindCliente(String cpf, String senha) {
-        BufferedReader reader = null;
-        
+
+    public static void ClearFile(String filePath) {
+        File file = new File(filePath);
+        FileWriter fr = null;
         try {
-            reader = new BufferedReader(new FileReader(
-                Constants.CLIENTE_LIST_FILE_PATH));
-        } catch(IOException e) {
+            fr = new FileWriter(file, false);
+            fr.write("");
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        
-        String selectedClienteAsString = null;
-        try {
-            String line = reader.readLine();
-            while (line != null) {
-                String[] data = line.split("\\s+");
-                if(data[2].equals(cpf) && data[4].equals(senha)) {
-                    selectedClienteAsString = line;
-                }
-                line = reader.readLine();
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            reader.close();
-        } catch(IOException e) {
-            e.printStackTrace();
         }
-        
-        return selectedClienteAsString;
     }
-    
-    public static void SetCurrentUser(String ClienteAsString) {
-        WriteData(Constants.CURRENT_USER_FILE_PATH, ClienteAsString, false);
-    }
-    
+
 }

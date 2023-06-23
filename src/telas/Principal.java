@@ -28,6 +28,16 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         
+        initializeData();
+        saveData();
+    }
+    
+    private void initializeData() {
+        clientes = ManageData.GetClientes();
+        filmes = ManageData.GetFilmes();
+    }
+    
+    private void saveData() {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -36,8 +46,8 @@ public class Principal extends javax.swing.JFrame {
                 ManageData.SaveFilmes(filmes);
             }
         });
-        
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.

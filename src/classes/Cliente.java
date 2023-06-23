@@ -33,6 +33,10 @@ public class Cliente {
     
     public Cliente(int id, String email, String cpf, String nome,
             String senha, String dataNasc, boolean estudante, boolean preferencial) {
+        
+        // do not change these order of parameters!!!!
+        // it will break ManageData
+        
         this.id = id;
         this.nome = nome;
         this.dataNasc = dataNasc;

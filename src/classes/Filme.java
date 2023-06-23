@@ -31,6 +31,9 @@ public class Filme {
             int classificacaoIndicativa, long bilheteria, 
             float avaliacaoDoPublico, String sinopse) {
         
+        // do not change these order of parameters!!!!
+        // it will break ManageData
+        
         this.id = id;
         this.titulo = titulo;
         this.dataEstreia = dataEstreia;
