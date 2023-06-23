@@ -242,7 +242,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         // Cadastra um cliente
-/*
+
         if (!Pattern.matches(Constants.REGEX_CPF, textFieldCpf.getText())) {
             JOptionPane.showMessageDialog(null, "CPF inválido");
             return;
@@ -262,7 +262,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "A senha deve conter pelo menos 8 dígitos.");
             return;
         }
-*/
+
         Cliente cliente = new Cliente(
                 Principal.clientes.size(),
                 textFieldEmail.getText(),
