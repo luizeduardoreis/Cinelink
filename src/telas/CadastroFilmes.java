@@ -4,8 +4,10 @@
  */
 package telas;
 
+import Utils.Constants;
 import classes.Filme;
-import java.util.Date;
+import java.util.regex.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +31,6 @@ public class CadastroFilmes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblIddoFilme = new javax.swing.JLabel();
         lblTituloDoFilme = new javax.swing.JLabel();
         lblCadastroDeFilmes = new javax.swing.JLabel();
         lblDataDeEstreia = new javax.swing.JLabel();
@@ -37,7 +38,6 @@ public class CadastroFilmes extends javax.swing.JFrame {
         lblBilheteria = new javax.swing.JLabel();
         lblAvaliacaoDoPublico = new javax.swing.JLabel();
         txtTituloDoFilme = new javax.swing.JTextField();
-        txtIdDoFilme = new javax.swing.JTextField();
         txtDataDeEstreia = new javax.swing.JTextField();
         txtClassificacaoIndicativa = new javax.swing.JTextField();
         txtBilheteria = new javax.swing.JTextField();
@@ -50,9 +50,7 @@ public class CadastroFilmes extends javax.swing.JFrame {
         paneTxtSinopse = new javax.swing.JScrollPane();
         txtSinopseFilme = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblIddoFilme.setText("Id do Filme:");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTituloDoFilme.setText("Título do Filme:");
 
@@ -93,34 +91,32 @@ public class CadastroFilmes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(paneTxtSinopse)
-                    .addComponent(txtBilheteria, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTituloDoFilme, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdDoFilme)
-                    .addComponent(txtDataDeEstreia, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtClassificacaoIndicativa, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAvaliacaoDoPublico, javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(paneTxtSinopse, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtBilheteria)
+                    .addComponent(txtTituloDoFilme)
+                    .addComponent(txtDataDeEstreia)
+                    .addComponent(txtClassificacaoIndicativa)
+                    .addComponent(txtAvaliacaoDoPublico)
+                    .addComponent(txtDiretorFilme)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 458, Short.MAX_VALUE)
-                        .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtDiretorFilme, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCadastroDeFilmes)
                             .addComponent(lblBilheteria)
-                            .addComponent(lblIddoFilme)
                             .addComponent(lblTituloDoFilme)
                             .addComponent(lblDataDeEstreia)
                             .addComponent(lblClassificacaoIndicativa)
                             .addComponent(lblAvaliacaoDoPublico)
                             .addComponent(lblDiretor)
                             .addComponent(lblSinopseFilme))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 454, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -129,10 +125,6 @@ public class CadastroFilmes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblCadastroDeFilmes)
                 .addGap(18, 18, 18)
-                .addComponent(lblIddoFilme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdDoFilme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTituloDoFilme)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTituloDoFilme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,11 +152,11 @@ public class CadastroFilmes extends javax.swing.JFrame {
                 .addComponent(lblSinopseFilme)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(paneTxtSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -175,19 +167,49 @@ public class CadastroFilmes extends javax.swing.JFrame {
         txtBilheteria.setText("");
         txtAvaliacaoDoPublico.setText("");
         txtClassificacaoIndicativa.setText("");
-        txtIdDoFilme.setText("");
         txtTituloDoFilme.setText("");
         txtDataDeEstreia.setText("");
     }//GEN-LAST:event_btnCancelarFilmeActionPerformed
 
     private void btnSalvarFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFilmeActionPerformed
         // TODO add your handling code here:
-        Date data = new Date(txtDataDeEstreia.getText());
-        Filme novoFilme;
-        novoFilme = new Filme(Integer.parseInt(txtIdDoFilme.getText()), txtTituloDoFilme.getText(), 
-                txtDiretorFilme.getText(), data, Integer.parseInt(txtClassificacaoIndicativa.getText()), 
-                Long.parseLong(txtBilheteria.getText()), Float.parseFloat(txtAvaliacaoDoPublico.getText()),
-                txtSinopseFilme.getText());
+        
+        if(!Utils.Util.tryParseInt(txtClassificacaoIndicativa.getText())) {
+            JOptionPane.showMessageDialog(null, 
+                    "Classificação indicativa inválida");
+            return;
+        }
+        
+        if(!Utils.Util.tryParseInt(txtBilheteria.getText())) {
+            JOptionPane.showMessageDialog(null, 
+                    "Bilheteria inválida");
+            return;
+        }
+        
+        if(!Utils.Util.tryParseFloat(txtAvaliacaoDoPublico.getText())) {
+            JOptionPane.showMessageDialog(null, 
+                    "Avaliação do publico inválida");
+            return;
+        }
+        
+        if (!Pattern.matches(Constants.REGEX_DATE, txtDataDeEstreia.getText())) {
+            JOptionPane.showMessageDialog(null, "Data de estreia inválida");
+            return;
+        }
+        
+        Filme novoFilme = new Filme(
+                Principal.filmes.size(),
+                txtTituloDoFilme.getText(), 
+                txtDiretorFilme.getText(),
+                txtDataDeEstreia.getText(),
+                Integer.parseInt(txtClassificacaoIndicativa.getText()), 
+                Long.parseLong(txtBilheteria.getText()),
+                Float.parseFloat(txtAvaliacaoDoPublico.getText()),
+                txtSinopseFilme.getText()
+        );
+        
+        Principal.filmes.add(novoFilme);
+        
     }//GEN-LAST:event_btnSalvarFilmeActionPerformed
 
     /**
@@ -234,7 +256,6 @@ public class CadastroFilmes extends javax.swing.JFrame {
     private javax.swing.JLabel lblClassificacaoIndicativa;
     private javax.swing.JLabel lblDataDeEstreia;
     private javax.swing.JLabel lblDiretor;
-    private javax.swing.JLabel lblIddoFilme;
     private javax.swing.JLabel lblSinopseFilme;
     private javax.swing.JLabel lblTituloDoFilme;
     private javax.swing.JScrollPane paneTxtSinopse;
@@ -243,7 +264,6 @@ public class CadastroFilmes extends javax.swing.JFrame {
     private javax.swing.JTextField txtClassificacaoIndicativa;
     private javax.swing.JTextField txtDataDeEstreia;
     private javax.swing.JTextField txtDiretorFilme;
-    private javax.swing.JTextField txtIdDoFilme;
     private javax.swing.JTextArea txtSinopseFilme;
     private javax.swing.JTextField txtTituloDoFilme;
     // End of variables declaration//GEN-END:variables

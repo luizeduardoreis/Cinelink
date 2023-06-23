@@ -1,24 +1,20 @@
- package telas;
-
-
-import javax.swing.*;
-
-import classes.Cliente;
-import telas.Principal;
-import classes.Cliente;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package telas;
 
 /**
  *
  * @author maxwell
  */
-public class AreaDeLogin extends javax.swing.JFrame {
+public class AdminArea extends javax.swing.JFrame {
 
     /**
-     * Creates new form AreaDeLogin
+     * Creates new form AdminArea
      */
-    public AreaDeLogin() {
+    public AdminArea() {
         initComponents();
-        //button
     }
 
     /**
@@ -31,18 +27,18 @@ public class AreaDeLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         panelLogin = new javax.swing.JPanel();
-        labelCpf = new javax.swing.JLabel();
+        labelUsername = new javax.swing.JLabel();
         labelSenha = new javax.swing.JLabel();
-        textFieldCpf = new javax.swing.JTextField();
+        textFieldUsername = new javax.swing.JTextField();
         passwordFieldSenha = new javax.swing.JPasswordField();
         buttonEntrar = new javax.swing.JButton();
         buttonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        panelLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 1, 15))); // NOI18N
+        panelLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Admin Area", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 1, 15))); // NOI18N
 
-        labelCpf.setText("Cpf");
+        labelUsername.setText("Username");
 
         labelSenha.setText("Senha");
 
@@ -51,27 +47,27 @@ public class AreaDeLogin extends javax.swing.JFrame {
         panelLoginLayout.setHorizontalGroup(
             panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLoginLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(15, 15, 15)
                 .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelSenha)
-                    .addComponent(labelCpf))
-                .addGap(60, 60, 60)
-                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(labelUsername)
+                    .addComponent(labelSenha))
+                .addGap(36, 36, 36)
+                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                    .addComponent(passwordFieldSenha))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         panelLoginLayout.setVerticalGroup(
             panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLoginLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelCpf)
-                    .addComponent(textFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelUsername)
+                    .addComponent(textFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelSenha)
-                    .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelSenha))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -95,60 +91,44 @@ public class AreaDeLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(14, 14, 14)
                 .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonEntrar)
                     .addComponent(buttonSair))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
+        // TODO add your handling code here:
+
+        String password = this.passwordFieldSenha.getText();
+        String username = this.textFieldUsername.getText();
+
+       // do something
+
+    }//GEN-LAST:event_buttonEntrarActionPerformed
+
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_buttonSairActionPerformed
-
-    private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
-        // TODO add your handling code here:
-        
-        String password = this.passwordFieldSenha.getText(); 
-        String cpf = this.textFieldCpf.getText();
-        
-        Cliente tmp = null;
-        
-        for(int i = 0; i < Principal.clientes.size(); i++) {
-            var cliente = Principal.clientes.get(i);
-            if(cliente.getCpf().equals(cpf) && cliente.getSenha().equals(password)) {
-                tmp = cliente;
-            }
-        }
-       
-        if(tmp != null) {
-            Principal.currentUser = tmp;
-            JOptionPane.showMessageDialog(null, "Logado com sucesso");
-            this.setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha inválido.");
-        }
-             
-    }//GEN-LAST:event_buttonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,20 +147,20 @@ public class AreaDeLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AreaDeLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AreaDeLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AreaDeLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AreaDeLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminArea.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AreaDeLogin().setVisible(true);
+                new AdminArea().setVisible(true);
             }
         });
     }
@@ -188,10 +168,10 @@ public class AreaDeLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonEntrar;
     private javax.swing.JButton buttonSair;
-    private javax.swing.JLabel labelCpf;
     private javax.swing.JLabel labelSenha;
+    private javax.swing.JLabel labelUsername;
     private javax.swing.JPanel panelLogin;
     private javax.swing.JPasswordField passwordFieldSenha;
-    private javax.swing.JTextField textFieldCpf;
+    private javax.swing.JTextField textFieldUsername;
     // End of variables declaration//GEN-END:variables
 }

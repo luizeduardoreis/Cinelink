@@ -2,13 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package classes;
+package Utils;
 
+import Utils.Constants;
+import classes.Cliente;
+import classes.Filme;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +21,21 @@ import java.io.IOException;
 public class ManageData {
     
     public ManageData() {}
+    
+    public static void SaveClientes(ArrayList<Cliente> clientes) {
+        for(var c : clientes) {
+            WriteData(Constants.CLIENTE_LIST_FILE_PATH,
+                c.toString(), false);
+        }
+    }
+    
+    public static void SaveFilmes(ArrayList<Filme> filmes) {
+        for(var f : filmes) {
+            WriteData(Constants.FILMES_LIST_FILE_PATH,
+                f.toString(), false);
+        }
+    }
+    
     
     public static void WriteData(String filePath, String data, boolean append) {
         File file = new File(filePath);

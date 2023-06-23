@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,28 +23,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="paneTxtSinopse" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnCancelarFilme" min="-2" pref="135" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnSalvarFilme" min="-2" pref="137" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="paneTxtSinopse" alignment="1" max="32767" attributes="0"/>
                   <Component id="txtBilheteria" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtTituloDoFilme" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtIdDoFilme" alignment="1" max="32767" attributes="0"/>
                   <Component id="txtDataDeEstreia" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtClassificacaoIndicativa" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtAvaliacaoDoPublico" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="458" max="32767" attributes="0"/>
-                      <Component id="btnCancelarFilme" min="-2" pref="178" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSalvarFilme" min="-2" pref="175" max="-2" attributes="0"/>
-                  </Group>
                   <Component id="txtDiretorFilme" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblCadastroDeFilmes" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblBilheteria" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblIddoFilme" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblTituloDoFilme" min="-2" max="-2" attributes="0"/>
                           <Component id="lblDataDeEstreia" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblClassificacaoIndicativa" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -52,7 +50,7 @@
                           <Component id="lblDiretor" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSinopseFilme" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="454" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -64,11 +62,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblCadastroDeFilmes" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="lblIddoFilme" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtIdDoFilme" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblTituloDoFilme" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtTituloDoFilme" min="-2" max="-2" attributes="0"/>
@@ -96,22 +90,17 @@
               <Component id="lblSinopseFilme" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="paneTxtSinopse" min="-2" pref="200" max="-2" attributes="0"/>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnCancelarFilme" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
-                  <Component id="btnSalvarFilme" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                  <Component id="btnCancelarFilme" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnSalvarFilme" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblIddoFilme">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Id do Filme:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblTituloDoFilme">
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#xed;tulo do Filme:"/>
@@ -146,8 +135,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTituloDoFilme">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtIdDoFilme">
     </Component>
     <Component class="javax.swing.JTextField" name="txtDataDeEstreia">
     </Component>

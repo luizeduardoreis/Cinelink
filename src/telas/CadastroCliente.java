@@ -6,7 +6,7 @@ package telas;
 
 import classes.*;
 import java.util.regex.*;
-import classes.Constants;
+import Utils.Constants;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author maxwell
  */
 public class CadastroCliente extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form CadastroCliente
      */
@@ -210,7 +210,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
     private void enableSaveButton() {
         // Libera Salvar
         if(textFieldNome.getText().equals("")){
@@ -243,29 +242,29 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         // Cadastra um cliente
-        
-        if(!Pattern.matches("[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}", textFieldCpf.getText())) {
+
+        if (!Pattern.matches(Constants.REGEX_CPF, textFieldCpf.getText())) {
             JOptionPane.showMessageDialog(null, "CPF inválido");
             return;
         }
-        
-        if(!Pattern.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", textFieldEmail.getText())) {
+
+        if (!Pattern.matches(Constants.REGEX_EMAIL, textFieldEmail.getText())) {
             JOptionPane.showMessageDialog(null, "Email inválido");
             return;
         }
-        
-        if(!Pattern.matches("^(0[1-9]|[12][0-9]|[3][01])/(0[1-9]|1[012])/\\d{4}$", textFieldData.getText())) {
+
+        if (!Pattern.matches(Constants.REGEX_DATE, textFieldData.getText())) {
             JOptionPane.showMessageDialog(null, "Data de nascimento inválida");
             return;
         }
-        
-        if(passwordFieldSenha.getText().length() < 8) {
+
+        if (passwordFieldSenha.getText().length() < 8) {
             JOptionPane.showMessageDialog(null, "A senha deve conter pelo menos 8 dígitos.");
             return;
         }
-        
+
         Cliente cliente = new Cliente(
-                0,
+                Principal.clientes.size(),
                 textFieldEmail.getText(),
                 textFieldCpf.getText(),
                 textFieldNome.getText(),
@@ -273,13 +272,10 @@ public class CadastroCliente extends javax.swing.JFrame {
                 textFieldData.getText(),
                 toggleButtonEstudante.isSelected(),
                 toggleButtonPreferencial.isSelected()
-            );
-        
-        Principal.manageData.WriteData(Constants.CLIENTE_LIST_FILE_PATH,
-                cliente.toString(), true);
-        
+        );
+
+        Principal.clientes.add(cliente);
         JOptionPane.showMessageDialog(null, "Conta criada com sucesso");
-        
         this.setVisible(false);
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
@@ -298,7 +294,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void textFieldCpfKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldCpfKeyReleased
         this.enableSaveButton();
     }//GEN-LAST:event_textFieldCpfKeyReleased
-   
+
     private void passwordFieldSenhaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldSenhaKeyReleased
         this.enableSaveButton();
     }//GEN-LAST:event_passwordFieldSenhaKeyReleased
@@ -331,7 +327,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CadastroCliente().setVisible(true);

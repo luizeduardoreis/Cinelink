@@ -4,26 +4,41 @@
  */
 package telas;
 
+import Utils.ManageData;
 import classes.*;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author maxwell
  */
 public class Principal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Principal
      */
+    
+    public static ArrayList<Cliente> clientes = new ArrayList();
+    public static ArrayList<Filme> filmes = new ArrayList();
+    public static Cliente currentUser = null;
+  
     public Principal() {
         initComponents();
+        
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("Saving data......");
+                ManageData.SaveClientes(clientes);
+                ManageData.SaveFilmes(filmes);
+            }
+        });
+        
     }
     
-    public static ManageData manageData = new ManageData();
-  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,6 +54,7 @@ public class Principal extends javax.swing.JFrame {
         buttonCadastroCliente = new javax.swing.JButton();
         imagemPrincipal = new javax.swing.JLabel();
         buttonEntrar = new javax.swing.JButton();
+        buttonAdmin = new javax.swing.JButton();
         menuBarPrincipal = new javax.swing.JMenuBar();
         menuOpcoes = new javax.swing.JMenu();
         menuItemListar = new javax.swing.JMenuItem();
@@ -78,6 +94,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        buttonAdmin.setText("Admin");
+        buttonAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAdminActionPerformed(evt);
+            }
+        });
+
         menuOpcoes.setText("Opções");
 
         menuItemListar.setText("Listar filmes");
@@ -112,9 +135,16 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(labelBemVindo)
+                .addGap(100, 100, 100))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelFazer)
@@ -124,14 +154,11 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(buttonCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                                 .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(imagemPrincipal)))
+                        .addComponent(imagemPrincipal)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(29, 29, 29))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelBemVindo)
-                .addGap(100, 100, 100))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +174,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(buttonCartaz, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(102, 102, 102))
+                .addGap(18, 18, 18)
+                .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -173,7 +202,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CadastroCliente().setVisible(true);
     }//GEN-LAST:event_buttonCadastroClienteActionPerformed
-
+    
     private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
         // TODO add your handling code here:
         new AreaDeLogin().setVisible(true);
@@ -183,6 +212,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AreaDeLogin().setVisible(true);
     }//GEN-LAST:event_menuItemEntrarActionPerformed
+
+    private void buttonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdminActionPerformed
+        // TODO add your handling code here:
+        new AdminArea().setVisible(true);
+    }//GEN-LAST:event_buttonAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +254,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAdmin;
     private javax.swing.JButton buttonCadastroCliente;
     private javax.swing.JButton buttonCartaz;
     private javax.swing.JButton buttonEntrar;

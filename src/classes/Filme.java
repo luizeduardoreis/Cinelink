@@ -15,7 +15,7 @@ public class Filme {
     
     private int id;
     private String titulo;
-    private Date dataEstreia;
+    private String dataEstreia;
     private int classificacaoIndicativa;
     private long bilheteria;
     private float avaliacaoDoPublico;
@@ -27,7 +27,10 @@ public class Filme {
         sessoes = new ArrayList();
     };
  
-    public Filme(int id, String titulo, String diretor, Date dataEstreia, int classificacaoIndicativa, long bilheteria, float avaliacaoDoPublico, String sinopse) {
+    public Filme(int id, String titulo, String diretor, String dataEstreia, 
+            int classificacaoIndicativa, long bilheteria, 
+            float avaliacaoDoPublico, String sinopse) {
+        
         this.id = id;
         this.titulo = titulo;
         this.dataEstreia = dataEstreia;
@@ -56,11 +59,11 @@ public class Filme {
         this.titulo = titulo;
     }
 
-    public Date getDataEstreia() {
+    public String getDataEstreia() {
         return dataEstreia;
     }
 
-    public void setDataEstreia(Date dataEstreia) {
+    public void setDataEstreia(String dataEstreia) {
         this.dataEstreia = dataEstreia;
     }
 
@@ -87,9 +90,32 @@ public class Filme {
     public void setAvaliacaoDoPublico(float avaliacaoDoPublico) {
         this.avaliacaoDoPublico = avaliacaoDoPublico;
     }
+
+    public String getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
     
     public void addSessao(Sessao sessao) {
         this.sessoes.add(sessao);
     }
     
+    @Override
+    public String toString() {
+        return getId() + " " + getTitulo() + " " + getDiretor() + " " 
+                + getDataEstreia() + " " + getClassificacaoIndicativa() + " "
+                + getBilheteria() + " " + getAvaliacaoDoPublico() + " "
+                + getSinopse();
+    }
 }
