@@ -87,7 +87,7 @@ public class ManageData {
                 var sinopse = "";
                 
                 for(int i = 8; i < info.length; i++) {
-                    sinopse += info[i];
+                    sinopse += info[i] + " ";
                 }
                 
                 var filme = new Filme(
