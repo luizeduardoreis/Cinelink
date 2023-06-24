@@ -5,7 +5,6 @@
 package classes;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -22,14 +21,15 @@ public class Filme {
     private String diretor;
     private ArrayList<Sessao> sessoes;
     private String sinopse;
-
+    private String imageUrl;
+    
     public Filme(){
         sessoes = new ArrayList();
     };
  
     public Filme(int id, String titulo, String diretor, String dataEstreia, 
             int classificacaoIndicativa, long bilheteria, 
-            float avaliacaoDoPublico, String sinopse) {
+            float avaliacaoDoPublico, String sinopse, String imageUrl) {
         
         // do not change these order of parameters!!!!
         // it will break ManageData
@@ -42,6 +42,7 @@ public class Filme {
         this.avaliacaoDoPublico = avaliacaoDoPublico;
         this.diretor = diretor;
         this.sinopse = sinopse;
+        this.imageUrl = imageUrl;
         
         sessoes = new ArrayList();
     }
@@ -113,12 +114,20 @@ public class Filme {
     public void addSessao(Sessao sessao) {
         this.sessoes.add(sessao);
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     
     @Override
     public String toString() {
         return getId() + " " + getTitulo() + " " + getDiretor() + " " 
                 + getDataEstreia() + " " + getClassificacaoIndicativa() + " "
                 + getBilheteria() + " " + getAvaliacaoDoPublico() + " "
-                + getSinopse();
+                + getSinopse() + " " + getImageUrl();
     }
 }

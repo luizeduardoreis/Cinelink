@@ -162,7 +162,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(buttonCartaz)
                                 .addGap(32, 32, 32)
                                 .addComponent(buttonCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                                 .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(194, 194, 194)
@@ -177,7 +177,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(labelBemVindo)
                 .addGap(18, 18, 18)
                 .addComponent(imagemPrincipal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(labelFazer)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -225,7 +225,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void buttonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdminActionPerformed
         // TODO add your handling code here:
-        new AdminArea().setVisible(true);
+        new AdminLogin().setVisible(true);
     }//GEN-LAST:event_buttonAdminActionPerformed
 
     /**

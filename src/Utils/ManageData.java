@@ -97,7 +97,8 @@ public class ManageData {
                     Integer.parseInt(info[4]),
                     Long.parseLong(info[5]),
                     Float.parseFloat(info[6]),
-                    info[7]
+                    info[7],
+                    info[8]
                 );
 
                 data.add(filme);

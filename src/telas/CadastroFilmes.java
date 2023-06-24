@@ -49,6 +49,9 @@ public class CadastroFilmes extends javax.swing.JFrame {
         lblSinopseFilme = new javax.swing.JLabel();
         paneTxtSinopse = new javax.swing.JScrollPane();
         txtSinopseFilme = new javax.swing.JTextArea();
+        lblImage = new javax.swing.JLabel();
+        txtImage = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,6 +90,15 @@ public class CadastroFilmes extends javax.swing.JFrame {
         txtSinopseFilme.setRows(5);
         paneTxtSinopse.setViewportView(txtSinopseFilme);
 
+        lblImage.setText("Url da capa");
+
+        jButton1.setText("Limpar dados");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,30 +106,36 @@ public class CadastroFilmes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(paneTxtSinopse, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(paneTxtSinopse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
                     .addComponent(txtBilheteria)
                     .addComponent(txtTituloDoFilme)
                     .addComponent(txtDataDeEstreia)
                     .addComponent(txtClassificacaoIndicativa)
                     .addComponent(txtAvaliacaoDoPublico)
                     .addComponent(txtDiretorFilme)
+                    .addComponent(txtImage)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCadastroDeFilmes)
                             .addComponent(lblBilheteria)
                             .addComponent(lblTituloDoFilme)
                             .addComponent(lblDataDeEstreia)
                             .addComponent(lblClassificacaoIndicativa)
                             .addComponent(lblAvaliacaoDoPublico)
                             .addComponent(lblDiretor)
-                            .addComponent(lblSinopseFilme))
-                        .addGap(0, 454, Short.MAX_VALUE)))
+                            .addComponent(lblSinopseFilme)
+                            .addComponent(lblImage))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCadastroDeFilmes)
+                .addGap(232, 232, 232))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,27 +166,29 @@ public class CadastroFilmes extends javax.swing.JFrame {
                 .addComponent(lblDiretor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDiretorFilme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblImage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSinopseFilme)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(paneTxtSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paneTxtSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(btnCancelarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvarFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFilmeActionPerformed
         // TODO add your handling code here:
-        txtBilheteria.setText("");
-        txtAvaliacaoDoPublico.setText("");
-        txtClassificacaoIndicativa.setText("");
-        txtTituloDoFilme.setText("");
-        txtDataDeEstreia.setText("");
+        this.dispose();
     }//GEN-LAST:event_btnCancelarFilmeActionPerformed
 
     private void btnSalvarFilmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFilmeActionPerformed
@@ -205,13 +225,31 @@ public class CadastroFilmes extends javax.swing.JFrame {
                 Integer.parseInt(txtClassificacaoIndicativa.getText()), 
                 Long.parseLong(txtBilheteria.getText()),
                 Float.parseFloat(txtAvaliacaoDoPublico.getText()),
-                txtSinopseFilme.getText()
+                txtSinopseFilme.getText(),
+                txtImage.getText()
         );
         
+        JOptionPane.showMessageDialog(null, "Filme cadastrado com sucesso.");
         Principal.filmes.add(novoFilme);
-        
+        this.clearTxtFields();
     }//GEN-LAST:event_btnSalvarFilmeActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.clearTxtFields();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void clearTxtFields() {
+        txtBilheteria.setText("");
+        txtAvaliacaoDoPublico.setText("");
+        txtClassificacaoIndicativa.setText("");
+        txtTituloDoFilme.setText("");
+        txtDataDeEstreia.setText("");
+        txtImage.setText("");
+        txtSinopseFilme.setText("");
+        txtDiretorFilme.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -250,12 +288,14 @@ public class CadastroFilmes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarFilme;
     private javax.swing.JButton btnSalvarFilme;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblAvaliacaoDoPublico;
     private javax.swing.JLabel lblBilheteria;
     private javax.swing.JLabel lblCadastroDeFilmes;
     private javax.swing.JLabel lblClassificacaoIndicativa;
     private javax.swing.JLabel lblDataDeEstreia;
     private javax.swing.JLabel lblDiretor;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblSinopseFilme;
     private javax.swing.JLabel lblTituloDoFilme;
     private javax.swing.JScrollPane paneTxtSinopse;
@@ -264,6 +304,7 @@ public class CadastroFilmes extends javax.swing.JFrame {
     private javax.swing.JTextField txtClassificacaoIndicativa;
     private javax.swing.JTextField txtDataDeEstreia;
     private javax.swing.JTextField txtDiretorFilme;
+    private javax.swing.JTextField txtImage;
     private javax.swing.JTextArea txtSinopseFilme;
     private javax.swing.JTextField txtTituloDoFilme;
     // End of variables declaration//GEN-END:variables
