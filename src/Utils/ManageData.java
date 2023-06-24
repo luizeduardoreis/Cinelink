@@ -4,19 +4,14 @@
  */
 package Utils;
 
-import Utils.Constants;
 import classes.Cliente;
 import classes.Filme;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Scanner;
-import telas.Principal;
 
 /**
  *
@@ -89,6 +84,12 @@ public class ManageData {
 
                 var info = line.split("\\s+");
 
+                var sinopse = "";
+                
+                for(int i = 8; i < info.length; i++) {
+                    sinopse += info[i];
+                }
+                
                 var filme = new Filme(
                     Integer.parseInt(info[0]),
                     info[1],
@@ -98,7 +99,7 @@ public class ManageData {
                     Long.parseLong(info[5]),
                     Float.parseFloat(info[6]),
                     info[7],
-                    info[8]
+                    sinopse
                 );
 
                 data.add(filme);

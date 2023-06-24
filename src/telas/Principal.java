@@ -205,7 +205,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void buttonCartazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCartazActionPerformed
         // TODO add your handling code here:
-        new ListagemFilmes().setVisible(true);
+        if(Principal.filmes.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ainda não há filmes cadastrados. "
+                    + "Por favor, volte mais tarde");
+        } else {
+            new ListagemDeFilmesDinamica().setVisible(true);
+        }
     }//GEN-LAST:event_buttonCartazActionPerformed
 
     private void buttonCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastroClienteActionPerformed

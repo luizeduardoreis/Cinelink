@@ -29,7 +29,7 @@ public class Filme {
  
     public Filme(int id, String titulo, String diretor, String dataEstreia, 
             int classificacaoIndicativa, long bilheteria, 
-            float avaliacaoDoPublico, String sinopse, String imageUrl) {
+            float avaliacaoDoPublico, String imageUrl, String sinopse) {
         
         // do not change these order of parameters!!!!
         // it will break ManageData
@@ -128,6 +128,6 @@ public class Filme {
         return getId() + " " + getTitulo() + " " + getDiretor() + " " 
                 + getDataEstreia() + " " + getClassificacaoIndicativa() + " "
                 + getBilheteria() + " " + getAvaliacaoDoPublico() + " "
-                + getSinopse() + " " + getImageUrl();
+                + getImageUrl() + " " + getSinopse();
     }
 }
