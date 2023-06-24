@@ -42,16 +42,17 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         btnFilmeAnterior = new javax.swing.JButton();
         btnProximoFilme = new javax.swing.JButton();
+        pnlHideBar = new javax.swing.JPanel();
         tbbPainelDeFilmes = new javax.swing.JTabbedPane();
         tb1 = new javax.swing.JPanel();
         lblCartazFilme = new javax.swing.JLabel();
         lblTituloFilme = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtSinopse = new javax.swing.JTextPane();
         btnSessaoQuatorzeHorasDub = new javax.swing.JButton();
         lblSessoesDub = new javax.swing.JLabel();
         btnSessaoQuinzeETrintaDub = new javax.swing.JButton();
@@ -66,6 +67,38 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         btnSessaoDezenoveETrintaLeg = new javax.swing.JButton();
         btnSessaoVinteEUmaLeg = new javax.swing.JButton();
         btnSessaoVinteEDuasETrintaLeg = new javax.swing.JButton();
+        lblClassificacaoIndicativa = new javax.swing.JLabel();
+        lblClassificacaoIndicativaIdade = new javax.swing.JLabel();
+        lblEstreia = new javax.swing.JLabel();
+        lblEstreiaData = new javax.swing.JLabel();
+        lblDiretor = new javax.swing.JLabel();
+        lblDiretorNome = new javax.swing.JLabel();
+        lblAvaliacaoDoPublico = new javax.swing.JLabel();
+        lblAvaliacaoDoPublicoNum = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtSinopse = new javax.swing.JTextPane();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -106,18 +139,28 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFilmeAnterior)
                     .addComponent(btnProximoFilme))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 750, 90));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 750, 80));
+
+        javax.swing.GroupLayout pnlHideBarLayout = new javax.swing.GroupLayout(pnlHideBar);
+        pnlHideBar.setLayout(pnlHideBarLayout);
+        pnlHideBarLayout.setHorizontalGroup(
+            pnlHideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        pnlHideBarLayout.setVerticalGroup(
+            pnlHideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(pnlHideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 30));
 
         lblCartazFilme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filme1.png"))); // NOI18N
 
-        lblTituloFilme.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        lblTituloFilme.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
         lblTituloFilme.setText("Uma Incrível Jornada Espacial");
-
-        txtSinopse.setText("Synopsis: In a not-too-distant future, a team of brilliant scientists and adventurous astronauts embark on a groundbreaking space mission. Their objective is to reach a distant galaxy and explore a planet rumored to hold the key to eternal life. However, as they traverse the uncharted regions of the universe, they encounter cosmic anomalies and face perilous challenges that test their physical and mental limits. Amidst the vast expanse of space, they must rely on their resourcefulness and teamwork to survive and uncover the extraordinary secrets that await them.");
-        jScrollPane1.setViewportView(txtSinopse);
 
         btnSessaoQuatorzeHorasDub.setText("14:00");
 
@@ -147,6 +190,30 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
 
         btnSessaoVinteEDuasETrintaLeg.setText("22:30");
 
+        lblClassificacaoIndicativa.setText("Classificação Indicativa:");
+
+        lblClassificacaoIndicativaIdade.setText("14 Anos");
+
+        lblEstreia.setText("Estreia:");
+
+        lblEstreiaData.setText("Data/De/Estreia");
+
+        lblDiretor.setText("Diretor:");
+
+        lblDiretorNome.setText("James Cameron");
+
+        lblAvaliacaoDoPublico.setText("Avaliação do Público:");
+
+        lblAvaliacaoDoPublicoNum.setText("5.0");
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txtSinopse.setEditable(false);
+        txtSinopse.setText("Synopsis: In a not-too-distant future, a team of brilliant scientists and adventurous astronauts embark on a groundbreaking space mission. Their objective is to reach a distant galaxy and explore a planet rumored to hold the key to eternal life. However, as they traverse the uncharted regions of the universe, they encounter cosmic anomalies and face perilous challenges that test their physical and mental limits. Amidst the vast expanse of space, they must rely on their resourcefulness and teamwork to survive and uncover the extraordinary secrets that await them.");
+        txtSinopse.setToolTipText("");
+        jScrollPane1.setViewportView(txtSinopse);
+
         javax.swing.GroupLayout tb1Layout = new javax.swing.GroupLayout(tb1);
         tb1.setLayout(tb1Layout);
         tb1Layout.setHorizontalGroup(
@@ -155,57 +222,86 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tb1Layout.createSequentialGroup()
-                        .addComponent(lblCartazFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSessaoQuatorzeHorasLeg)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(tb1Layout.createSequentialGroup()
-                                .addComponent(lblTituloFilme)
-                                .addGap(0, 79, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(btnSessaoQuinzeETrintaLeg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSessaoDezesseteHorasLeg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSessaoDezenoveETrintaLeg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSessaoVinteEUmaLeg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSessaoVinteEDuasETrintaLeg))
                     .addGroup(tb1Layout.createSequentialGroup()
                         .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCartazFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSessoesDub)
                             .addComponent(lblSessoesLeg)
                             .addGroup(tb1Layout.createSequentialGroup()
-                                .addComponent(btnSessaoQuatorzeHorasLeg)
+                                .addComponent(btnSessaoQuatorzeHorasDub)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoQuinzeETrintaLeg)
+                                .addComponent(btnSessaoQuinzeETrintaDub)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoDezesseteHorasLeg)
+                                .addComponent(btnSessaoDezesseteHorasDub)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoDezenoveETrintaLeg)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoVinteEUmaLeg)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoVinteEDuasETrintaLeg))
+                                .addComponent(btnSessaoDezenoveETrintaDub)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(tb1Layout.createSequentialGroup()
                                 .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblSessoesDub)
                                     .addGroup(tb1Layout.createSequentialGroup()
-                                        .addComponent(btnSessaoQuatorzeHorasDub)
+                                        .addComponent(btnSessaoVinteEUmaDub)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnSessaoQuinzeETrintaDub)
+                                        .addComponent(btnSessaoVinteEDuasETrintaDub))
+                                    .addComponent(lblTituloFilme)
+                                    .addGroup(tb1Layout.createSequentialGroup()
+                                        .addComponent(lblClassificacaoIndicativa)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnSessaoDezesseteHorasDub)
+                                        .addComponent(lblClassificacaoIndicativaIdade))
+                                    .addGroup(tb1Layout.createSequentialGroup()
+                                        .addComponent(lblEstreia)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnSessaoDezenoveETrintaDub)
+                                        .addComponent(lblEstreiaData))
+                                    .addGroup(tb1Layout.createSequentialGroup()
+                                        .addComponent(lblDiretor)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnSessaoVinteEUmaDub)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSessaoVinteEDuasETrintaDub)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                        .addComponent(lblDiretorNome))
+                                    .addGroup(tb1Layout.createSequentialGroup()
+                                        .addComponent(lblAvaliacaoDoPublico)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblAvaliacaoDoPublicoNum)))
+                                .addGap(197, 197, 197)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tb1Layout.setVerticalGroup(
             tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tb1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(tb1Layout.createSequentialGroup()
                         .addComponent(lblTituloFilme, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1))
+                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblClassificacaoIndicativaIdade)
+                            .addComponent(lblClassificacaoIndicativa, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstreiaData)
+                            .addComponent(lblEstreia))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDiretor)
+                            .addComponent(lblDiretorNome))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAvaliacaoDoPublico)
+                            .addComponent(lblAvaliacaoDoPublicoNum))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblCartazFilme))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(lblSessoesDub)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tb1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -225,7 +321,7 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
                     .addComponent(btnSessaoDezenoveETrintaLeg)
                     .addComponent(btnSessaoVinteEUmaLeg)
                     .addComponent(btnSessaoVinteEDuasETrintaLeg))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         tbbPainelDeFilmes.addTab("tab1", tb1);
@@ -240,10 +336,10 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(766, 565));
+        setSize(new java.awt.Dimension(766, 559));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -282,6 +378,10 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         
         lblTituloFilme.setText(filme.getTitulo());
         txtSinopse.setText(filme.getSinopse());
+        lblClassificacaoIndicativaIdade.setText(String.valueOf(filme.getClassificacaoIndicativa()) + " Anos");
+        lblEstreiaData.setText(filme.getDataEstreia());
+        lblDiretorNome.setText(filme.getDiretor());
+        lblAvaliacaoDoPublicoNum.setText(String.valueOf(filme.getAvaliacaoDoPublico()));
         
         URL url;
         BufferedImage image;
@@ -355,13 +455,24 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
     private javax.swing.JButton btnSessaoVinteEDuasETrintaLeg;
     private javax.swing.JButton btnSessaoVinteEUmaDub;
     private javax.swing.JButton btnSessaoVinteEUmaLeg;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAvaliacaoDoPublico;
+    private javax.swing.JLabel lblAvaliacaoDoPublicoNum;
     private javax.swing.JLabel lblCartazFilme;
+    private javax.swing.JLabel lblClassificacaoIndicativa;
+    private javax.swing.JLabel lblClassificacaoIndicativaIdade;
+    private javax.swing.JLabel lblDiretor;
+    private javax.swing.JLabel lblDiretorNome;
+    private javax.swing.JLabel lblEstreia;
+    private javax.swing.JLabel lblEstreiaData;
     private javax.swing.JLabel lblSessoesDub;
     private javax.swing.JLabel lblSessoesLeg;
     private javax.swing.JLabel lblTituloFilme;
+    private javax.swing.JPanel pnlHideBar;
     private javax.swing.JPanel tb1;
     private javax.swing.JTabbedPane tbbPainelDeFilmes;
     private javax.swing.JTextPane txtSinopse;

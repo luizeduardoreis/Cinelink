@@ -144,10 +144,10 @@ public class ListagemFilmes extends javax.swing.JFrame {
         );
         pnlHideBarLayout.setVerticalGroup(
             pnlHideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jPanel2.add(pnlHideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 60));
+        jPanel2.add(pnlHideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 30));
 
         lblCartazFilme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/filme1.png"))); // NOI18N
         lblCartazFilme.setText("jLabel1");
