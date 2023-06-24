@@ -4,6 +4,13 @@
  */
 package telas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Luiz Eduardo
@@ -13,10 +20,106 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
     /**
      * Creates new form SelecaoDeAssento
      */
+    ArrayList<javax.swing.JToggleButton> botoes = new ArrayList();
+    
     public SelecaoDeAssento() {
         initComponents();
+        this.initializeButtonsList();
+        this.setEvents();
     }
 
+    private void initializeButtonsList() {
+        // meu deus, alguem me diz que tem uma forma melhor de fazer isso por favor
+        botoes.add(jToggleButton1);
+        botoes.add(jToggleButton2);
+        botoes.add(jToggleButton3);
+        botoes.add(jToggleButton4);
+        botoes.add(jToggleButton5);
+        botoes.add(jToggleButton6);
+        botoes.add(jToggleButton7);
+        botoes.add(jToggleButton8);
+        botoes.add(jToggleButton9);
+        botoes.add(jToggleButton10);
+        botoes.add(jToggleButton11);
+        botoes.add(jToggleButton12);
+        botoes.add(jToggleButton13);
+        botoes.add(jToggleButton14);
+        botoes.add(jToggleButton15);
+        botoes.add(jToggleButton16);
+        botoes.add(jToggleButton17);
+        botoes.add(jToggleButton18);
+        botoes.add(jToggleButton19);
+        botoes.add(jToggleButton20);
+        botoes.add(jToggleButton21);
+        botoes.add(jToggleButton22);
+        botoes.add(jToggleButton23);
+        botoes.add(jToggleButton24);
+        botoes.add(jToggleButton25);
+        botoes.add(jToggleButton26);
+        botoes.add(jToggleButton27);
+        botoes.add(jToggleButton28);
+        botoes.add(jToggleButton29);
+        botoes.add(jToggleButton30);
+        botoes.add(jToggleButton31);
+        botoes.add(jToggleButton32);
+        botoes.add(jToggleButton33);
+        botoes.add(jToggleButton34);
+        botoes.add(jToggleButton35);
+        botoes.add(jToggleButton36);
+        botoes.add(jToggleButton37);
+        botoes.add(jToggleButton38);
+        botoes.add(jToggleButton39);
+        botoes.add(jToggleButton40);
+        botoes.add(jToggleButton41);
+        botoes.add(jToggleButton42);
+        botoes.add(jToggleButton43);
+        botoes.add(jToggleButton44);
+        botoes.add(jToggleButton45);
+        botoes.add(jToggleButton46);
+        botoes.add(jToggleButton47);
+        botoes.add(jToggleButton48);
+        botoes.add(jToggleButton49);
+        botoes.add(jToggleButton50);
+        botoes.add(jToggleButton51);
+        botoes.add(jToggleButton52);
+        botoes.add(jToggleButton53);
+        botoes.add(jToggleButton54);
+        botoes.add(jToggleButton55);
+        botoes.add(jToggleButton56);
+        botoes.add(jToggleButton57);
+        botoes.add(jToggleButton58);
+        botoes.add(jToggleButton59);
+        botoes.add(jToggleButton60);
+        botoes.add(jToggleButton61);
+        botoes.add(jToggleButton62);
+    }
+
+    private void setEvents() {
+        
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() instanceof JToggleButton) {
+                    JToggleButton btn =  (JToggleButton) e.getSource();
+                    desselectButtons();
+                    btn.setSelected(true);
+                }
+            }
+        };
+        
+        for(int i = 0; i < botoes.size(); i++) {
+            botoes.get(i).addActionListener(listener);
+        }
+
+    }
+    
+    private void desselectButtons() {
+        for(int i = 0; i < botoes.size(); i++) {
+            botoes.get(i).setSelected(false);
+        }
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,6 +248,12 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
 
         jLabel17.setText("8");
 
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,8 +304,8 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jToggleButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(27, 27, 27)
+                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
                                                 .addComponent(jLabel11)
                                                 .addGap(27, 27, 27)
                                                 .addComponent(jLabel12)
@@ -316,34 +425,34 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel1))))))
-                .addContainerGap(259, Short.MAX_VALUE))
+                                        .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
                 .addGap(5, 5, 5)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
@@ -456,7 +565,12 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1MouseClicked
 
     /**
      * @param args the command line arguments

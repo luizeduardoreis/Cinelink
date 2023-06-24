@@ -149,6 +149,11 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         lblTituloFilme.setText("Uma Incrível Jornada Espacial");
 
         btnSessaoQuatorzeHorasDub.setText("14:00");
+        btnSessaoQuatorzeHorasDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoQuatorzeHorasDubActionPerformed(evt);
+            }
+        });
 
         lblSessoesDub.setText("Sessões dubladas disponíveis:");
 
@@ -359,6 +364,11 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         this.filmeIndex += 1;
         this.changeMovie();
     }//GEN-LAST:event_btnProximoFilmeActionPerformed
+
+    private void btnSessaoQuatorzeHorasDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoQuatorzeHorasDubActionPerformed
+        // TODO add your handling code here:
+        new SelecaoDeAssento().setVisible(true);
+    }//GEN-LAST:event_btnSessaoQuatorzeHorasDubActionPerformed
 
     private void changeMovie() {
         this.setFilme();

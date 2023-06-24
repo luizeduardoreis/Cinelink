@@ -8,7 +8,7 @@ package classes;
  *
  * @author maxwell
  */
-public class Ingresso {
+public abstract class Ingresso {
     
     private int id;
     private float preco;
