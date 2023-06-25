@@ -40,7 +40,7 @@ public class ManageData {
 
     public static ArrayList<Cliente> GetClientes() {
         var data = new ArrayList<Cliente>();
-        
+
         try {
             File file = new File(Constants.CLIENTE_LIST_FILE_PATH);
             FileReader fr = new FileReader(file);
@@ -51,14 +51,14 @@ public class ManageData {
                 var info = line.split("\\s+");
 
                 var cliente = new Cliente(
-                    Integer.parseInt(info[0]),
-                    info[1],
-                    info[2],
-                    info[3],
-                    info[4],
-                    info[5],
-                    Boolean.parseBoolean(info[6]),
-                    Boolean.parseBoolean(info[7])
+                        Integer.parseInt(info[0]),
+                        info[1],
+                        info[2],
+                        info[3],
+                        info[4],
+                        info[5],
+                        Boolean.parseBoolean(info[6]),
+                        Boolean.parseBoolean(info[7])
                 );
                 data.add(cliente);
 
@@ -68,11 +68,11 @@ public class ManageData {
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
         }
-        
+
         return data;
     }
-    
-      public static ArrayList<Filme> GetFilmes() {
+
+    public static ArrayList<Filme> GetFilmes() {
         var data = new ArrayList<Filme>();
 
         try {
@@ -85,21 +85,21 @@ public class ManageData {
                 var info = line.split("\\s+");
 
                 var sinopse = "";
-                
-                for(int i = 8; i < info.length; i++) {
+
+                for (int i = 8; i < info.length; i++) {
                     sinopse += info[i] + " ";
                 }
-                
+
                 var filme = new Filme(
-                    Integer.parseInt(info[0]),
-                    info[1],
-                    info[2],
-                    info[3],
-                    Integer.parseInt(info[4]),
-                    Long.parseLong(info[5]),
-                    Float.parseFloat(info[6]),
-                    info[7],
-                    sinopse
+                        Integer.parseInt(info[0]),
+                        info[1],
+                        info[2],
+                        info[3],
+                        Integer.parseInt(info[4]),
+                        Long.parseLong(info[5]),
+                        Float.parseFloat(info[6]),
+                        info[7],
+                        sinopse
                 );
 
                 data.add(filme);
@@ -110,7 +110,7 @@ public class ManageData {
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
         }
-        
+
         return data;
     }
 

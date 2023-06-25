@@ -4,24 +4,28 @@
  */
 package classes;
 
+import Utils.Constants;
+
 /**
  *
  * @author maxwell
  */
-public abstract class Ingresso {
+public class Ingresso {
     
     private int id;
     private float preco;
     private Cliente cliente;
     private Sessao sessao;
+    private Assento assento;
     
     public Ingresso() {};
 
-    public Ingresso(int id, float preco, Cliente cliente, Sessao sessao) {
+    public Ingresso(int id, Cliente cliente, Sessao sessao, 
+            Assento assento) {
         this.id = id;
-        this.preco = preco;
         this.cliente = cliente;
         this.sessao = sessao;
+        this.assento = assento;
     }
     
     public int getId() {
@@ -56,6 +60,8 @@ public abstract class Ingresso {
         this.sessao = sessao;
     }
     
-    
+    public float getPrecoBase() {
+        return Constants.TICKET_PRICE;
+    }
     
 }

@@ -18,6 +18,10 @@ public class Assento {
     
     public Assento(){};
 
+    public Assento(String id) {
+        this.id = id;
+    };
+    
     public Assento(String id, boolean vip, boolean preferencial, boolean danificado, Sala sala) {
         this.id = id;
         this.vip = vip;

@@ -14,7 +14,7 @@ import java.util.Date;
 public class Sessao {
     
     private int id;
-    private Date data;
+    private String data;
     private boolean exibicaoEm3d;
     private boolean legendado;
     private boolean dublado;
@@ -31,7 +31,7 @@ public class Sessao {
         this.ingressos = new ArrayList();
     };
 
-    public Sessao(int id, Date data, boolean exibicaoEm3d, boolean legendado, boolean dublado, boolean preEstreia, boolean brinde, boolean cancelada, Sala sala, Filme filme, Cinema cinema) {
+    public Sessao(int id, String data, boolean exibicaoEm3d, boolean legendado, boolean dublado, boolean preEstreia, boolean brinde, boolean cancelada, Sala sala, Filme filme, Cinema cinema) {
         this.id = id;
         this.data = data;
         this.exibicaoEm3d = exibicaoEm3d;
@@ -47,6 +47,13 @@ public class Sessao {
         this.ingressos = new ArrayList();
     }
 
+    public Sessao(String data, boolean legendado, boolean dublado, Filme filme) {
+        this.data = data;
+        this.legendado = legendado;
+        this.dublado = dublado;
+        this.filme = filme;
+    }
+    
     public int getId() {
         return id;
     }
@@ -55,11 +62,11 @@ public class Sessao {
         this.id = id;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -141,6 +148,10 @@ public class Sessao {
 
     public ArrayList<Ingresso> getIngressos() {
         return ingressos;
+    }
+    
+    public String getAudioType() {
+        return (this.legendado ? "Legendado" : "Dublado");
     }
     
 }

@@ -4,6 +4,7 @@
  */
 package telas;
 
+import classes.Sessao;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,7 +23,7 @@ import javax.swing.JPanel;
  */
 public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
 
-     private int filmeIndex;
+    public static int filmeIndex;
     
     /**
      * Creates new form ListagemDeFilmesDinamica
@@ -158,28 +159,83 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         lblSessoesDub.setText("Sessões dubladas disponíveis:");
 
         btnSessaoQuinzeETrintaDub.setText("15:30");
+        btnSessaoQuinzeETrintaDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoQuinzeETrintaDubActionPerformed(evt);
+            }
+        });
 
         btnSessaoDezesseteHorasDub.setText("17:00");
+        btnSessaoDezesseteHorasDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoDezesseteHorasDubActionPerformed(evt);
+            }
+        });
 
         btnSessaoDezenoveETrintaDub.setText("19:30");
+        btnSessaoDezenoveETrintaDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoDezenoveETrintaDubActionPerformed(evt);
+            }
+        });
 
         btnSessaoVinteEUmaDub.setText("21:00");
+        btnSessaoVinteEUmaDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoVinteEUmaDubActionPerformed(evt);
+            }
+        });
 
         btnSessaoVinteEDuasETrintaDub.setText("22:30");
+        btnSessaoVinteEDuasETrintaDub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoVinteEDuasETrintaDubActionPerformed(evt);
+            }
+        });
 
         btnSessaoQuatorzeHorasLeg.setText("14:00");
+        btnSessaoQuatorzeHorasLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoQuatorzeHorasLegActionPerformed(evt);
+            }
+        });
 
         lblSessoesLeg.setText("Sessões legendadas disponíveis:");
 
         btnSessaoQuinzeETrintaLeg.setText("15:30");
+        btnSessaoQuinzeETrintaLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoQuinzeETrintaLegActionPerformed(evt);
+            }
+        });
 
         btnSessaoDezesseteHorasLeg.setText("17:00");
+        btnSessaoDezesseteHorasLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoDezesseteHorasLegActionPerformed(evt);
+            }
+        });
 
         btnSessaoDezenoveETrintaLeg.setText("19:30");
+        btnSessaoDezenoveETrintaLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoDezenoveETrintaLegActionPerformed(evt);
+            }
+        });
 
         btnSessaoVinteEUmaLeg.setText("21:00");
+        btnSessaoVinteEUmaLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoVinteEUmaLegActionPerformed(evt);
+            }
+        });
 
         btnSessaoVinteEDuasETrintaLeg.setText("22:30");
+        btnSessaoVinteEDuasETrintaLeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSessaoVinteEDuasETrintaLegActionPerformed(evt);
+            }
+        });
 
         lblClassificacaoIndicativa.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         lblClassificacaoIndicativa.setText("Classificação Indicativa:");
@@ -367,8 +423,217 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
 
     private void btnSessaoQuatorzeHorasDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoQuatorzeHorasDubActionPerformed
         // TODO add your handling code here:
-        new SelecaoDeAssento().setVisible(true);
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("14h00m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
     }//GEN-LAST:event_btnSessaoQuatorzeHorasDubActionPerformed
+
+    private void btnSessaoQuinzeETrintaDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoQuinzeETrintaDubActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("15h30m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+    }//GEN-LAST:event_btnSessaoQuinzeETrintaDubActionPerformed
+
+    private void btnSessaoDezesseteHorasDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoDezesseteHorasDubActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("17h00m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoDezesseteHorasDubActionPerformed
+
+    private void btnSessaoDezenoveETrintaDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoDezenoveETrintaDubActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("19h30m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoDezenoveETrintaDubActionPerformed
+
+    private void btnSessaoVinteEUmaDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoVinteEUmaDubActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("21h00m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoVinteEUmaDubActionPerformed
+
+    private void btnSessaoVinteEDuasETrintaDubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoVinteEDuasETrintaDubActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("22h30m", 
+                        false, 
+                        true, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoVinteEDuasETrintaDubActionPerformed
+
+    private void btnSessaoQuatorzeHorasLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoQuatorzeHorasLegActionPerformed
+        // TODO add your handling code here:
+        
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("14h00m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoQuatorzeHorasLegActionPerformed
+
+    private void btnSessaoQuinzeETrintaLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoQuinzeETrintaLegActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("15h30m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoQuinzeETrintaLegActionPerformed
+
+    private void btnSessaoDezesseteHorasLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoDezesseteHorasLegActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("17h00m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoDezesseteHorasLegActionPerformed
+
+    private void btnSessaoDezenoveETrintaLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoDezenoveETrintaLegActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("19h30m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoDezenoveETrintaLegActionPerformed
+
+    private void btnSessaoVinteEUmaLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoVinteEUmaLegActionPerformed
+        // TODO add your handling code here:
+
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("21h00m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoVinteEUmaLegActionPerformed
+
+    private void btnSessaoVinteEDuasETrintaLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSessaoVinteEDuasETrintaLegActionPerformed
+        // TODO add your handling code here:
+        
+        if(Principal.currentUser == null) {
+            JOptionPane.showMessageDialog(null, "Você precisa estar logado para "
+                    + "escolher um assento");
+            return;
+        }
+        
+        new SelecaoDeAssento(
+                new Sessao("22h00m", 
+                        true, 
+                        false, 
+                        Principal.filmes.get(this.filmeIndex))
+        ).setVisible(true);
+        
+    }//GEN-LAST:event_btnSessaoVinteEDuasETrintaLegActionPerformed
 
     private void changeMovie() {
         this.setFilme();
