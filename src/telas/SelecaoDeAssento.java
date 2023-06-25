@@ -101,8 +101,13 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() instanceof JToggleButton) {
                     JToggleButton btn =  (JToggleButton) e.getSource();
-                    desselectButtons();
-                    btn.setSelected(true);
+                    if(btn.isSelected()) {
+                        desselectButtons();
+                        btn.setSelected(true);
+                    } else {
+                        btn.setSelected(false);
+                    }
+                    
                 }
             }
         };
@@ -211,7 +216,7 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
         jToggleButton63 = new javax.swing.JToggleButton();
         jToggleButton64 = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 48)); // NOI18N
         jLabel1.setText("TELA");
