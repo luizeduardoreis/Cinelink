@@ -100,7 +100,7 @@ public class Cliente {
     
     @Override
     public String toString() {
-        return this.id + " " + this.email + " " + this.cpf + " " + this.nome + " " + this.senha + " " + 
-                this.dataNasc + " " + this.estudante + " " + this.preferencial;
+        return this.id + "$" + this.email + "$" + this.cpf + "$" + this.nome + "$" + this.senha + "$" + 
+                this.dataNasc + "$" + this.estudante + "$" + this.preferencial;
     }
 }

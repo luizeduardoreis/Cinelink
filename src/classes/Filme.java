@@ -125,9 +125,9 @@ public class Filme {
     
     @Override
     public String toString() {
-        return getId() + " " + getTitulo() + " " + getDiretor() + " " 
-                + getDataEstreia() + " " + getClassificacaoIndicativa() + " "
-                + getBilheteria() + " " + getAvaliacaoDoPublico() + " "
-                + getImageUrl() + " " + getSinopse();
+        return getId() + "$" + getTitulo() + "$" + getDiretor() + "$" 
+                + getDataEstreia() + "$" + getClassificacaoIndicativa() + "$"
+                + getBilheteria() + "$" + getAvaliacaoDoPublico() + "$"
+                + getImageUrl() + "$" + getSinopse();
     }
 }

@@ -48,7 +48,7 @@ public class ManageData {
             String line;
             while ((line = br.readLine()) != null) {
 
-                var info = line.split("\\s+");
+                var info = line.split("\\$");
 
                 var cliente = new Cliente(
                         Integer.parseInt(info[0]),
@@ -82,13 +82,7 @@ public class ManageData {
             String line;
             while ((line = br.readLine()) != null) {
 
-                var info = line.split("\\s+");
-
-                var sinopse = "";
-
-                for (int i = 8; i < info.length; i++) {
-                    sinopse += info[i] + " ";
-                }
+                var info = line.split("\\$");
 
                 var filme = new Filme(
                         Integer.parseInt(info[0]),
@@ -99,7 +93,7 @@ public class ManageData {
                         Long.parseLong(info[5]),
                         Float.parseFloat(info[6]),
                         info[7],
-                        sinopse
+                        info[8]
                 );
 
                 data.add(filme);
