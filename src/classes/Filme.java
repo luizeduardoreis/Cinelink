@@ -29,7 +29,7 @@ public class Filme {
  
     public Filme(int id, String titulo, String diretor, String dataEstreia, 
             int classificacaoIndicativa, long bilheteria, 
-            float avaliacaoDoPublico, String imageUrl, String sinopse) {
+            float avaliacaoDoPublico, String sinopse) {
         
         // do not change these order of parameters!!!!
         // it will break ManageData
@@ -42,7 +42,6 @@ public class Filme {
         this.avaliacaoDoPublico = avaliacaoDoPublico;
         this.diretor = diretor;
         this.sinopse = sinopse;
-        this.imageUrl = imageUrl;
         
         sessoes = new ArrayList();
     }
@@ -128,6 +127,6 @@ public class Filme {
         return getId() + "$" + getTitulo() + "$" + getDiretor() + "$" 
                 + getDataEstreia() + "$" + getClassificacaoIndicativa() + "$"
                 + getBilheteria() + "$" + getAvaliacaoDoPublico() + "$"
-                + getImageUrl() + "$" + getSinopse() + "$";
+                + getSinopse() + "$";
     }
 }

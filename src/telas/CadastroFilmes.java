@@ -225,8 +225,7 @@ public class CadastroFilmes extends javax.swing.JFrame {
                 Integer.parseInt(txtClassificacaoIndicativa.getText()), 
                 Long.parseLong(txtBilheteria.getText()),
                 Float.parseFloat(txtAvaliacaoDoPublico.getText()),
-                txtSinopseFilme.getText(),
-                txtImage.getText()
+                txtSinopseFilme.getText()
         );
         
         JOptionPane.showMessageDialog(null, "Filme cadastrado com sucesso.");
