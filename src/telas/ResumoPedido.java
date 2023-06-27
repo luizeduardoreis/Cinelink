@@ -21,6 +21,11 @@ public class ResumoPedido extends javax.swing.JFrame {
      * Creates new form ResumoPedido
      * @param sessao
      */
+    
+    /*
+        Tela para mostrar o resumo do pedido feito do usuário
+    */
+    
     public ResumoPedido(Sessao sessao, Assento assento) {
         initComponents();
         

@@ -16,6 +16,11 @@ public class AreaDeLogin extends javax.swing.JFrame {
     /**
      * Creates new form AreaDeLogin
      */
+    
+    /*
+    Tela simples de login para os usuários.
+    */
+    
     public AreaDeLogin() {
         initComponents();
         //button

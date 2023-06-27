@@ -21,6 +21,12 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     
+    /*
+        Tela principal do programa, conterá todos
+        os outros dados e informações. Além de manter
+        algumas entidades para serem acessadas.
+    */
+    
     public static ArrayList<Cliente> clientes = new ArrayList();
     public static ArrayList<Filme> filmes = new ArrayList();
     public static Cliente currentUser = null;
@@ -195,7 +201,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void menuItemListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemListarActionPerformed
         // TODO add your handling code here:
-        new ListagemFilmes().setVisible(true);
+        if(Principal.filmes.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ainda não há filmes cadastrados. "
+                    + "Por favor, volte mais tarde");
+        } else {
+            new ListagemDeFilmesDinamica().setVisible(true);
+        }
     }//GEN-LAST:event_menuItemListarActionPerformed
 
     private void menuItemCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCadastroActionPerformed

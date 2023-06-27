@@ -10,6 +10,10 @@ package Utils;
  */
 public class Util {
 
+    /*
+    Classe para guardar algumas classes uteis para todo o programa
+    */
+    
     public static boolean tryParseInt(String value) {
         try {
             var ignore = Integer.parseInt(value);

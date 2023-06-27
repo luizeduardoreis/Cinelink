@@ -18,6 +18,11 @@ public class CadastroCliente extends javax.swing.JFrame {
     /**
      * Creates new form CadastroCliente
      */
+    
+    /*
+        Tela para o cadastro de clientes
+    */
+    
     public CadastroCliente() {
         initComponents();
         buttonSalvar.setEnabled(false);

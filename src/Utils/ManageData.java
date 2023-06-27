@@ -19,6 +19,12 @@ import java.util.ArrayList;
  */
 public class ManageData {
 
+    /*
+        Classe para facilitar o uso de arquivos
+        e simular um banco de dados simples
+    */
+
+    
     public ManageData() {
     }
 

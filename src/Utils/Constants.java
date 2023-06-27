@@ -10,6 +10,10 @@ package Utils;
  */
 public class Constants {
     
+    /*
+    Classe para guardar as constantes do programa
+    */
+    
     private Constants() {} // não quero que instanciem essa classe
     
     public static final String CLIENTE_LIST_FILE_PATH = "src/database/Clientes.txt";

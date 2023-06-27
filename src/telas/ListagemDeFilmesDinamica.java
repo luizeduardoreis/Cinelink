@@ -29,6 +29,13 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
     /**
      * Creates new form ListagemDeFilmesDinamica
      */
+    
+    /*
+        Essa tela irá mostrar os filmes cadastrados de forma dinamica!
+        ou seja, ele irá renderizar os filmes em Principal.filmes,
+        não importa quantos sejam!
+    */
+    
     public ListagemDeFilmesDinamica() {
         initComponents();
         this.filmeIndex = 0;

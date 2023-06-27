@@ -13,6 +13,12 @@ public class AdminArea extends javax.swing.JFrame {
     /**
      * Creates new form AdminARea
      */
+    
+    /*
+        Essa tela conterá as opções específicas do admin
+        como cadastrar as entidades e etc
+    */
+    
     public AdminArea() {
         initComponents();
     }

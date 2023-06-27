@@ -18,6 +18,11 @@ public class CadastroFilmes extends javax.swing.JFrame {
     /**
      * Creates new form CadastroFilmes
      */
+    
+    /*
+        Telas para o cadastro de filmes
+    */
+    
     public CadastroFilmes() {
         initComponents();
     }

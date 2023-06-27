@@ -15,6 +15,13 @@ public class AdminLogin extends javax.swing.JFrame {
     /**
      * Creates new form AdminArea
      */
+    
+    /*
+        Uma tela simples de login para o admin
+        que permite o usuário acessar ao digitar
+        "admin" para o username e para a senha
+    */
+    
     public AdminLogin() {
         initComponents();
     }

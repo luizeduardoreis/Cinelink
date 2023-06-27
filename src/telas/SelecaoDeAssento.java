@@ -23,6 +23,12 @@ public class SelecaoDeAssento extends javax.swing.JFrame {
      * Creates new form SelecaoDeAssento
      */
     
+    /*
+        Tela para seleção de Assento, contem um menu informando o assento
+        escolhido
+    
+    */
+    
     Sessao sessao = null;
     String idAssento = "Nenhum";
     ArrayList<javax.swing.JToggleButton> botoes = new ArrayList();
