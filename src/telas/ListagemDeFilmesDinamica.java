@@ -4,6 +4,7 @@
  */
 package telas;
 
+import Utils.Constants;
 import classes.Sessao;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -664,22 +665,9 @@ public class ListagemDeFilmesDinamica extends javax.swing.JFrame {
         lblDiretorNome.setText(filme.getDiretor());
         lblAvaliacaoDoPublicoNum.setText(String.valueOf(filme.getAvaliacaoDoPublico()));
         
-        URL url;
-        BufferedImage image;
+        URL iconURL = ClassLoader.getSystemResource("img/" + filme.getId() + ".png");
+        lblCartazFilme.setIcon(new ImageIcon(iconURL));
         
-        try {
-            url = new URL(filme.getImageUrl());
-            image = ImageIO.read(url);     
-            lblCartazFilme.setIcon(new ImageIcon(image));
-        } catch (MalformedURLException e) {
-            // erro 
-            JOptionPane.showMessageDialog(null, 
-                    "Não foi possivel carregar a imagem deste filme.");
-        } catch (IOException ex) {
-            //erro  
-            JOptionPane.showMessageDialog(null, 
-                    "Não foi possivel carregar a imagem deste filme.");
-         }
     }
     
     
