@@ -128,6 +128,6 @@ public class Filme {
         return getId() + "$" + getTitulo() + "$" + getDiretor() + "$" 
                 + getDataEstreia() + "$" + getClassificacaoIndicativa() + "$"
                 + getBilheteria() + "$" + getAvaliacaoDoPublico() + "$"
-                + getImageUrl() + "$" + getSinopse();
+                + getImageUrl() + "$" + getSinopse() + "$";
     }
 }
